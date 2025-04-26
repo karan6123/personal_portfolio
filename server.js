@@ -13,14 +13,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 // static FileS
-app.use(express.static(path.join(__dirname, '../client/build')));
+app.use(express.static(path.join(__dirname, 'client/build')));
 //routes
 // app.use("/api/v1/portfolio",require("./routes/portfolioRoute"));
 const portfolioRoutes = require('./routes/portfolioRoute');
 app.use('/', portfolioRoutes);
 
 app.get('*',function(req,res){
-    res.sendFile(path.join(__dirname, '../client/build/index.html'));
+    res.sendFile(path.join(__dirname, 'client/build/index.html'));
 });
 
 //port
